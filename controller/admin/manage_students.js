@@ -97,6 +97,7 @@ $(document).ready(function() {
      
 
 // ajax function for updating the student info by calling a php file in models/admin
+//hello
 
 $("#update_student_button").click(function(){
     $.ajax(
