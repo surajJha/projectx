@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 $(document).ready(function() {
-
+//=============================UPDATE STUDENT STARTS HERE==============================================
     // hiding the go button and dropdown menu
     $("#student_list").hide();
     $("#student_select_button").hide();
@@ -68,6 +68,8 @@ $(document).ready(function() {
 
  });
 
+   
+
 // ajax funtion to fill second select option with data
     $("#student_search_options").change(function() {
 
@@ -94,11 +96,37 @@ $(document).ready(function() {
     });
      
 
+// ajax function for updating the student info by calling a php file in models/admin
+//hello
 
+$("#update_student_button").click(function(){
+    $.ajax(
+            {
+               
+                type: 'POST',
+                url: '../../models/admin/update_student_details.php',
+                cache: false,
+                data: values,
+                
+                success: function(j){
+
+                    if(j=="success"){
+                        
+                        $("#update_successful").html("Student's Information was successfully updated .");
+                        $("#update_student")[0].reset();
+                    }
+                    else{
+                        
+                       $("#update_failed").html("There was some error in updating the Student's Details. Please try again.");
+                       
+                    }
+                }
+            });
+});
 
 
  
-//============================================ADD STUDENT====================================
+//============================================ADD STUDENT STARTS HERE============================================
      // ajax function to add a new student in the database
       // getting form input values
       $("#add_new_student_submit").click(function(){
@@ -159,12 +187,15 @@ $(document).ready(function() {
                                 url: '../../models/admin/delete_student.php',
                                 data: values,
                                 
-                                success: function() //
+                                success: function(j)
                                 {
-
+                                alert(j);
                                         location.reload();
                                         $("#delete_student").html('<div class="alert-success" style="padding:5%"><center>The selected students have been deleted successfully!</center></div>');
-                                }
+                                },error: function(j) {
+
+                        alert(j);
+                        }
                         });
 
                 });
@@ -176,27 +207,6 @@ $(document).ready(function() {
 
         });
         
-        //==================AFTER CLICKING DELETE BUTTON==============//
-        //reloading of document
-        /*$("#delete_student_button").click(function(e)
-                {
-                    //e.preventDefault();
-                    var values = $("#select_student").serialize();
-                    
-                        $.ajax({
-                                type: 'POST',
-                                url: '../../models/admin/delete_student.php',
-                                data: values,
-                                cache:false,
-                                success: function(j)
-                                {
-                                alert(j);
-                                        location.reload();
-                                        $("#delete_student").html('<div class="alert-success" style="padding:5%"><center>The selected students have been deleted successfully!</center></div>');
-                                }
-                        });
-
-                });*/
+       
    //===================================================================================================================
 });
-
