@@ -100,6 +100,7 @@ $(document).ready(function() {
 //hello
 
 $("#update_student_button").click(function(){
+    var values = $("#update_form").serialize();
     $.ajax(
             {
                
