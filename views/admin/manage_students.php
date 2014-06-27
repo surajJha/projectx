@@ -234,7 +234,9 @@
 
 
                                                 <div class="tab-pane" id="tab3">
-                                                    <p>I'm in Section 2.</p>
+                                                    <div class="row" id="delete_student">
+                                                        <!-- placehodler for update student form --> 
+                                                    </div>
                                                 </div>
 
                                             </div>
