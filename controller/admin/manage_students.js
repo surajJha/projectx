@@ -103,7 +103,7 @@ $(document).ready(function() {
         $.ajax(
                 {
                     type: 'GET',
-                    url: '../../models/admin/update_student_details.php',
+                    url: '../../models/admin/update_student_list.php',
                     data: {
                         
                         select_student: $("#student_search_options").val()
