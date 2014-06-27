@@ -1,6 +1,6 @@
 <?php
 include '../database.php';
-header('Content-Type: application/json');
+
 /*
  * Deleting students from the list displayed in Student DELETE tab3
  */
@@ -51,7 +51,7 @@ for($i=0;$i<sizeof($parent_id);$i++){
 
 
 $delete_parent = $db->person->remove(array("_id"=>array('$in'=>$delete_parent_id)));
-echo "suraj";
+
 
 
 

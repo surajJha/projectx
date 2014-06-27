@@ -68,32 +68,6 @@ $(document).ready(function() {
 
  });
 
-    $("#student_search_options").change(function() {
-
-        $("#student_select_button").hide();
-        $("#update_student_form").empty();
-
-        $.ajax(
-                {
-                    type: 'GET',
-                    url: '../../models/admin/update_student_list.php',
-                    data: {
-                        
-                        select_student: $("#student_search_options").val()
-                    },
-                    success: function(j)
-                    {
-                       
-                        $("#student_list").html(options);
-                        /*$('#vq_standard option:contains("Select")').attr('disabled', 'disabled');
-                        $("#vq_topic").empty();
-                        $("#vq_type").empty();
-                        $("#vq_level").empty();*/
-                    }
-                }
-             )
- });
-
 // ajax funtion to fill second select option with data
     $("#student_search_options").change(function() {
 
@@ -103,7 +77,7 @@ $(document).ready(function() {
         $.ajax(
                 {
                     type: 'GET',
-                    url: '../../models/admin/update_student_details.php',
+                    url: '../../models/admin/update_student_list.php',
                     data: {
                         
                         select_student: $("#student_search_options").val()
@@ -185,15 +159,12 @@ $(document).ready(function() {
                                 url: '../../models/admin/delete_student.php',
                                 data: values,
                                 
-                                success: function(j)
+                                success: function() //
                                 {
-                                alert(j);
+
                                         location.reload();
                                         $("#delete_student").html('<div class="alert-success" style="padding:5%"><center>The selected students have been deleted successfully!</center></div>');
-                                },error: function(j) {
-
-                        alert(j);
-                        }
+                                }
                         });
 
                 });
