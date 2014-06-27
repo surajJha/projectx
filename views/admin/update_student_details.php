@@ -1,7 +1,7 @@
 <div class="row">
                                                              <!== ====================Student's information===============-->
                                                             <div class="col-md-6 col-md-offset-3">
-                                                                <form id="add_new_student" method="post" accept-charset="utf-8" class="form" role="form">  
+                                                                <form id="update_student" method="post" accept-charset="utf-8" class="form" role="form">  
                                                                     <h4>Student's Information</h4><hr>
                                                                     <div class="row"><br>
                                                                         <div class="col-xs-6 col-md-6">
@@ -57,6 +57,9 @@
                                                                     <button class="btn btn-lg btn-success btn-block signup-btn" id="add_new_student_submit" type="submit">
                                                                         Submit
                                                                     </button>
+                                                                   <br>
+                                                                    <div id="update_successful" class="alert-success" style="font-size: 10px"></div>
+                                                                        <div id="update_failed" class="alert-danger" style="font-size: 10px"></div>
                                                                 </form>          
                                                             </div>
                                                         </div>

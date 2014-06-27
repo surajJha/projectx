@@ -88,7 +88,7 @@
                                                 <div class="tab-pane active" id="tab1">
                                                     <div> 
                                                         <div class="row">
-                                                             <!== ====================Student's information===============-->
+                                                            <!== ====================Student's information===============-->
                                                             <div class="col-md-6 col-md-offset-3">
                                                                 <form id="add_new_student" method="post" accept-charset="utf-8" class="form" role="form">  
                                                                     <h4>Student's Information</h4><hr>
@@ -108,29 +108,29 @@
                                                                     <input type="date" placeholder="Enter Date of Birth in dd-mm-yyyy format" id="dob" name="dob" class="form-control input-lg" required>
                                                                     <input type="email" name="email_id" id="email_id" value="" class="form-control input-lg" placeholder="Your Email" required  />
 
-                                                                    
+
                                                                     <input type="tel" name="contact_no" id="contact_no" value="" class="form-control input-lg" placeholder="Phone Number"  required/>
 
-                                                                    
+
                                                                     <hr>
                                                                     <!-- ====================Parent's information===============-->
                                                                     <h4>Parent's Information</h4><hr>
                                                                     <h5> Father's Name </h5>
                                                                     <div class="row"><br>
-                                                                       
+
                                                                         <div class="col-xs-6 col-md-6">
-                                                                            
+
                                                                             <input type="text" name="father_first_name" id="father_first_name" value="" class="form-control input-lg" placeholder="First Name"  required/>                      
                                                                         </div>
                                                                         <div class="col-xs-6 col-md-6">
                                                                             <input type="text" name="father_last_name" id="father_last_name" value="" class="form-control input-lg" placeholder=" Last Name" required />                     
                                                                         </div>
                                                                     </div>
-                                                                   <h5> Mother's Name </h5>
+                                                                    <h5> Mother's Name </h5>
                                                                     <div class="row"><br>
-                                                                       
+
                                                                         <div class="col-xs-6 col-md-6">
-                                                                            
+
                                                                             <input type="text" name="mother_first_name" id="mother_first_name" value="" class="form-control input-lg" placeholder=" First Name"  required/>                      
                                                                         </div>
                                                                         <div class="col-xs-6 col-md-6">
@@ -141,10 +141,10 @@
                                                                         <label for="parent_address">Parent's Address</label>
                                                                         <textarea class="form-control" rows="3" id="parent_address" name="parent_address" required></textarea>
                                                                     </div>
-                                                                   <input type="email" name="parent_email" id="parent_email" value="" class="form-control input-lg" placeholder="Parent's Email Address" required  />
-                                                                   
-                                                                   <input type="tel" name="parent_contact_no" id="parent_contact_no" value="" class="form-control input-lg" placeholder=" Parent's Phone Number"  required/>
-              
+                                                                    <input type="email" name="parent_email" id="parent_email" value="" class="form-control input-lg" placeholder="Parent's Email Address" required  />
+
+                                                                    <input type="tel" name="parent_contact_no" id="parent_contact_no" value="" class="form-control input-lg" placeholder=" Parent's Phone Number"  required/>
+
                                                                     <button class="btn btn-lg btn-success btn-block signup-btn" id="add_new_student_submit" type="submit">
                                                                         Submit
                                                                     </button>
@@ -170,7 +170,7 @@
                                                     <div> 
                                                         <div class="row"><br>
                                                             <div class="col-md-10 col-md-offset-2">
-                                                                <form action="r" method="post" accept-charset="utf-8" class="form" role="form">  
+                                                                <form method="post" accept-charset="utf-8" class="form" name="" id="" role="form">  
                                                                     <div class="row">
                                                                         <div class="col-xs-4 col-md-4">
 
@@ -184,7 +184,7 @@
                                                                         </div> 
                                                                         <div class="col-xs-4 col-md-4" id="list">
                                                                             <select class="form-control" id="student_list" name="student_list" required>
-                                                                                
+
                                                                                 <!-- placeholder for either roll no or names -->
                                                                             </select>
 
@@ -192,46 +192,32 @@
                                                                         </div> 
                                                                         <div class="col-xs-2 col-md-2" id="student_select_button">
 
-                                                                            <input type="button" class="btn btn-primary " value="GO">
+                                                                            <input type="button" class="btn btn-primary " name="update_student_button" id="update_student_button" value="GO">
                                                                         </div> 
+                                                                        <br>
+                                                                       
 
                                                                     </div>
-
-
-
-
-
-
-
-
 
                                                                 </form>          
                                                             </div>
                                                         </div>
-                                                       
-                                                    </div>
-                                                     <div class="row">
-                                                            <div class="col-md-12 ">
-                                                                <div id="update_student_form">
-                                                                    <!-- placehodler for update student form -->  
 
-                                                                </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 ">
+                                                            <div id="update_student_form">
+                                                                <!-- placehodler for update student form -->  
 
                                                             </div>
 
                                                         </div>
 
+                                                    </div>
+
                                                 </div>
 
-
-
-
-
-
-
-
-
-
+                                                <!-- =      ===================================================== DELETE STUDENT TAB========================-->
 
                                                 <div class="tab-pane" id="tab3">
                                                     <div class="row" id="delete_student">
