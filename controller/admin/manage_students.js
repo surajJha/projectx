@@ -65,7 +65,7 @@ $(document).ready(function() {
                             $("#update_student_submit").click(function() {
 
                                 var values = $("#update_form").serialize();
-
+                                
                                 $.ajax(
                                         {
                                             type: 'POST',
@@ -73,7 +73,7 @@ $(document).ready(function() {
                                             cache: false,
                                             data: values,
                                             success: function(j) {
-
+                                                
                                                 if (j == "success") {
 
                                                     $("#update_successful").html("Student's Information was successfully updated .");
@@ -86,6 +86,7 @@ $(document).ready(function() {
                                                 }
                                             }
                                         });
+                                        return false;
                             });
 
                         }
@@ -124,34 +125,6 @@ $(document).ready(function() {
                 });
     });
      
-
-// ajax function for updating the student info by calling a php file in models/admin
-//hello
-
-$("#update_student_button").click(function(){
-    $.ajax(
-            {
-               
-                type: 'POST',
-                url: '../../models/admin/update_student_details.php',
-                cache: false,
-                data: values,
-                
-                success: function(j){
-
-                    if(j=="success"){
-                        
-                        $("#update_successful").html("Student's Information was successfully updated .");
-                        $("#update_student")[0].reset();
-                    }
-                    else{
-                        
-                       $("#update_failed").html("There was some error in updating the Student's Details. Please try again.");
-                       
-                    }
-                }
-            });
-});
 
  
 //============================================ADD STUDENT STARTS HERE============================================
@@ -217,7 +190,6 @@ $("#update_student_button").click(function(){
                                 
                                 success: function(j)
                                 {
-                                alert(j);
                                         location.reload();
                                         $("#delete_student").html('<div class="alert-success" style="padding:5%"><center>The selected students have been deleted successfully!</center></div>');
                                 },error: function(j) {

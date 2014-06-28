@@ -18,7 +18,7 @@
                                                                         <textarea class="form-control" rows="3" id="update_address" name="update_address" required></textarea>
                                                                     </div>
 
-                                                                    <input type="dob" placeholder="Enter Date of Birth in dd-mm-yyyy format" id="update_dob" name="update_dob" class="form-control input-lg" required>
+                                                                    <input type="text" placeholder="Enter Date of Birth in dd-mm-yyyy format" id="update_dob" name="update_dob" class="form-control input-lg" required>
                                                                     <input type="email" id="update_email_id" name="update_email_id" value="" class="form-control input-lg" placeholder="Your Email" required  />
                                                                    
                                                                     <input type="tel" id="update_contact_no" name="update_contact_no" value="" class="form-control input-lg" placeholder="Phone Number"  required/>
@@ -52,7 +52,7 @@
                                                                         <label for="name">Parent's Address</label>
                                                                         <textarea class="form-control" rows="3" id="update_parent_address" name="update_parent_address" required></textarea>
                                                                     </div>
-                                                                   <input type="email" name="update_parents_email" id="update_parent_email" value="" class="form-control input-lg" placeholder="Parent's Email Address" required  />
+                                                                   <input type="email" name="update_parent_email" id="update_parent_email" value="" class="form-control input-lg" placeholder="Parent's Email Address" required  />
                                                                    
                                                                    <input type="tel" name="update_parent_contact_no" id="update_parent_contact_no" value="" class="form-control input-lg" placeholder=" Parent's Phone Number"  required/>
               

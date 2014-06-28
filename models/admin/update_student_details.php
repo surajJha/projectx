@@ -1,23 +1,25 @@
-
 <?php
 include '../database.php';
+
 /* 
  * Updating student database changed by MODIFY Tab2
  */
 session_start();
-$databasename = $_SESSION["database_name"];
+$databasename = "projectx";//$_SESSION["database_name"];
 $db = $connection->$databasename;
 $standard = 1; //$_POST["standard"];
 $div = "A"; //$_POST["division"];
 //student details
-$first_name = $_POST["update_first_name"];
-$last_name = $_POST["update_last_name"];
-$roll_no = $_POST["update_roll_no"];
-$address = $_POST["update_address"];
+$first_name = /*"Apurv";*/$_POST["update_first_name"];
+$last_name = /*"hvgfg";*/$_POST["update_last_name"];
+$roll_no = /*1;*/intval($_POST["update_roll_no"]);
+$address = /*"colaba";*/$_POST["update_address"];
 $dob = $_POST["update_dob"];
-$email_id = $_POST["update_email_id"];
-$contact_no = $_POST["update_no"];
-//echo json_encode($_POST);
+
+
+$email_id = /*"apurv@gmail.com";*/$_POST["update_email_id"];
+$contact_no = /*977978789;*/intval($_POST["update_contact_no"]);
+
 $update_stu = $db->person->update(
         array("_id"=>$_SESSION["update_student_id"]),
         array('$set'=>array(
@@ -36,14 +38,15 @@ $update_stu = $db->person->update(
                 )
             )
         );
+
 //parent details
-$fatherfname = $_POST["father_first_name"];
-$fatherlname = $_POST["father_last_name"];
-$motherfname = $_POST["mother_first_name"];
-$motherlname = $_POST["mother_last_name"];
+$fatherfname = $_POST["update_father_first_name"];
+$fatherlname = $_POST["update_father_last_name"];
+$motherfname = $_POST["update_mother_first_name"];
+$motherlname = $_POST["update_mother_last_name"];
 $parent_address = $_POST["update_parent_address"];
 $parent_email = $_POST["update_parent_email"];
-$parent_contact = $_POST["update_parent_contact_no"];
+$parent_contact = intval($_POST["update_parent_contact_no"]);
 
 $update_parent = $db->person->update(
         array("_id"=> $_SESSION["update_student_parent_id"]),
@@ -65,4 +68,6 @@ $update_parent = $db->person->update(
 		)
             )
         );
+
+//echo json_encode($_POST);
 echo "success";
