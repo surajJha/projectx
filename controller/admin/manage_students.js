@@ -125,7 +125,33 @@ $(document).ready(function() {
     });
      
 
+// ajax function for updating the student info by calling a php file in models/admin
+//hello
 
+$("#update_student_button").click(function(){
+    $.ajax(
+            {
+               
+                type: 'POST',
+                url: '../../models/admin/update_student_details.php',
+                cache: false,
+                data: values,
+                
+                success: function(j){
+
+                    if(j=="success"){
+                        
+                        $("#update_successful").html("Student's Information was successfully updated .");
+                        $("#update_student")[0].reset();
+                    }
+                    else{
+                        
+                       $("#update_failed").html("There was some error in updating the Student's Details. Please try again.");
+                       
+                    }
+                }
+            });
+});
 
  
 //============================================ADD STUDENT STARTS HERE============================================

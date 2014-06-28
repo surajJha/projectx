@@ -1,7 +1,9 @@
 <div class="row">
                                                              <!== ====================Student's information===============-->
                                                             <div class="col-md-6 col-md-offset-3">
+
                                                                 <form id="update_form" name="update_form" method="post" accept-charset="utf-8" class="form" role="form">  
+
                                                                     <h4>Student's Information</h4><hr>
                                                                     <div class="row"><br>
                                                                         <div class="col-xs-6 col-md-6">
@@ -62,4 +64,4 @@
                                                                         <div id="update_failed" class="alert-danger" style="font-size: 10px"></div>
                                                                 </form>          
                                                             </div>
-                                                       
+</div>
