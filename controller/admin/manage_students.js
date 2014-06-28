@@ -30,43 +30,72 @@ $(document).ready(function() {
 // to prefill the form values for update student form
 // will will write an ajax funtion in the callback
 // LOAD funtion  below
-  $("#student_select_button").click(function() {
-        $("#update_student_form").load("update_student_details.php",function(){
+    $("#student_select_button").click(function() {
+        $("#update_student_form").load("update_student_details.php", function() {
             // callback ajax funtion GOES HERE
-            
-           $.ajax(
-                {
-                    type: 'GET',
-                    url: '../../models/admin/update_student_form.php',
-                    data: {
-                       select_student: $("#student_search_options").val(), 
-                       student_info:$("#student_list").val()
-                    },
-                    success: function(j)
+
+            $.ajax(
                     {
-                        
-                        $("#update_first_name").val(j[0]);
-                        $("#update_last_name").val(j[1]);
-                        $("#update_roll_no").val(j[2]);
-                        $("#update_address").val(j[3]);
-                        $("#update_dob").val(j[4]);
-                        $("#update_email_id").val(j[5]);
-                        $("#update_contact_no").val(j[6]);
-                        $("#update_father_first_name").val(j[7]);
-                        $("#update_father_last_name").val(j[8]);
-                        $("#update_mother_first_name").val(j[9]);
-                        $("#update_mother_last_name").val(j[10]);
-                        $("#update_parent_address").val(j[11]);
-                        $("#update_parent_email").val(j[12]);
-                        $("#update_parent_contact_no").val(j[13]);
-                    }
-                }); 
-            
-            
+                        type: 'GET',
+                        url: '../../models/admin/update_student_form.php',
+                        data: {
+                            select_student: $("#student_search_options").val(),
+                            student_info: $("#student_list").val()
+                        },
+                        success: function(j)
+                        {
+
+                            $("#update_first_name").val(j[0]);
+                            $("#update_last_name").val(j[1]);
+                            $("#update_roll_no").val(j[2]);
+                            $("#update_address").val(j[3]);
+                            $("#update_dob").val(j[4]);
+                            $("#update_email_id").val(j[5]);
+                            $("#update_contact_no").val(j[6]);
+                            $("#update_father_first_name").val(j[7]);
+                            $("#update_father_last_name").val(j[8]);
+                            $("#update_mother_first_name").val(j[9]);
+                            $("#update_mother_last_name").val(j[10]);
+                            $("#update_parent_address").val(j[11]);
+                            $("#update_parent_email").val(j[12]);
+                            $("#update_parent_contact_no").val(j[13]);
+                            // ajax function for updating the student info by calling a php file in models/admin
+//hello
+
+                            $("#update_student_submit").click(function() {
+
+                                var values = $("#update_form").serialize();
+
+                                $.ajax(
+                                        {
+                                            type: 'POST',
+                                            url: '../../models/admin/update_student_details.php',
+                                            cache: false,
+                                            data: values,
+                                            success: function(j) {
+
+                                                if (j == "success") {
+
+                                                    $("#update_successful").html("Student's Information was successfully updated .");
+
+                                                }
+                                                else {
+
+                                                    $("#update_failed").html("There was some error in updating the Student's Details. Please try again.");
+
+                                                }
+                                            }
+                                        });
+                            });
+
+                        }
+                    });
+
+
         });
 
 
- });
+    });
 
    
 
@@ -96,34 +125,6 @@ $(document).ready(function() {
     });
      
 
-// ajax function for updating the student info by calling a php file in models/admin
-//hello
-
-$("#update_student_button").click(function(){
-    var values = $("#update_form").serialize();
-    $.ajax(
-            {
-               
-                type: 'POST',
-                url: '../../models/admin/update_student_details.php',
-                cache: false,
-                data: values,
-                
-                success: function(j){
-
-                    if(j=="success"){
-                        
-                        $("#update_successful").html("Student's Information was successfully updated .");
-                        $("#update_student")[0].reset();
-                    }
-                    else{
-                        
-                       $("#update_failed").html("There was some error in updating the Student's Details. Please try again.");
-                       
-                    }
-                }
-            });
-});
 
 
  

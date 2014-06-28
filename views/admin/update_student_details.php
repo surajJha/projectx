@@ -54,9 +54,12 @@
                                                                    
                                                                    <input type="tel" name="update_parent_contact_no" id="update_parent_contact_no" value="" class="form-control input-lg" placeholder=" Parent's Phone Number"  required/>
               
-                                                                    <button class="btn btn-lg btn-success btn-block signup-btn" id="add_new_student_submit" type="submit">
+                                                                    <button class="btn btn-lg btn-success btn-block signup-btn" id="update_student_submit" name="update_student_submit" type="submit">
                                                                         Submit
                                                                     </button>
+                                                                   <br>
+                                                                    <div id="update_successful" class="alert-success" style="font-size: 10px"></div>
+                                                                        <div id="update_failed" class="alert-danger" style="font-size: 10px"></div>
                                                                 </form>          
                                                             </div>
-                                                        </div>
+                                                       

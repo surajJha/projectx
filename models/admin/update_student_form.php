@@ -19,8 +19,10 @@ if ($select_stu == "Name") {
     $fname = $name[0];
     $lname = $name[1];
     $stu = $db->person->findOne(
-            array("standard" => $standard, "division" => $div, "name.first_name" => $fname, "name.last_name" => $lname), array("_id" => 0, "name" => 1, "roll_no" => 1, "address" => 1, "dob" => 1, "roll_no" => 1, "contact_no" => 1, "email_id" => 1, "parent_id" => 1)
+            array("standard" => $standard, "division" => $div, "name.first_name" => $fname, "name.last_name" => $lname), array("_id" => 1, "name" => 1, "roll_no" => 1, "address" => 1, "dob" => 1, "roll_no" => 1, "contact_no" => 1, "email_id" => 1, "parent_id" => 1)
     );
+    $_SESSION["update_student_id"]=$stu["_id"];
+    $_SESSION["update_student_parent_id"]=$stu["parent_id"];
     $parent = $db->person->findOne(array("_id" => $stu["parent_id"]));
     $x = array();
     $x[0] = $stu["name"]["first_name"];

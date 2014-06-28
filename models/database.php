@@ -6,4 +6,4 @@
  * and open the template in the editor.
  */
 
-$connection = new MongoClient();
+$connection = new MongoClient("mongodb://192.168.217.53");
