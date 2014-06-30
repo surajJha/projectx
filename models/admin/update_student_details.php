@@ -1,3 +1,4 @@
+
 <?php
 include '../database.php';
 
@@ -5,7 +6,7 @@ include '../database.php';
  * Updating student database changed by MODIFY Tab2
  */
 session_start();
-$databasename = "projectx";//$_SESSION["database_name"];
+$databasename = /*"projectx";*/$_SESSION["database_name"];
 $db = $connection->$databasename;
 $standard = 1; //$_POST["standard"];
 $div = "A"; //$_POST["division"];
@@ -21,7 +22,7 @@ $email_id = /*"apurv@gmail.com";*/$_POST["update_email_id"];
 $contact_no = /*977978789;*/intval($_POST["update_contact_no"]);
 
 $update_stu = $db->person->update(
-        array("_id"=>  intval($_SESSION["update_student_id"])),
+        array("_id"=>$_SESSION["update_student_id"]),
         array('$set'=>array(
             "name"=>array(
 			"first_name"=> $first_name,
@@ -34,7 +35,7 @@ $update_stu = $db->person->update(
 		"standard"=> $standard,
 		"division"=> $div,
                 "roll_no"=> $roll_no,
-		"parent_id"=> intval($_SESSION["update_student_parent_id"])
+		"parent_id"=> $_SESSION["update_student_parent_id"]
                 )
             )
         );
@@ -49,7 +50,7 @@ $parent_email = $_POST["update_parent_email"];
 $parent_contact = intval($_POST["update_parent_contact_no"]);
 
 $update_parent = $db->person->update(
-        array("_id"=> intval($_SESSION["update_student_parent_id"])),
+        array("_id"=> $_SESSION["update_student_parent_id"]),
         array('$set'=>array(
 		
 		"father_name"=>array(
@@ -68,4 +69,7 @@ $update_parent = $db->person->update(
 		)
             )
         );
+
+//echo json_encode($_POST);
 echo "success";
+
