@@ -16,10 +16,10 @@
         <link href="../../assets/css/sidebar.css" rel="stylesheet">
         <style>
             .pic{
-                background-color: red;
+                //background-color: red;
                 //margin: 5px;
                 height: 150px;
-                width: 200px;
+                width: 220px;
                 color: red;
                 border-radius: 50%;
             }
@@ -75,19 +75,19 @@
 
 
                             
-
-                            <table class="table">
+'
+                            <table  class="table" id="class_oval_box" >
                                
                                 <tbody>
                                     <tr>
-                                        <td><img src="" class="pic" class=" img-responsive"></td>
-                                         <td><img src="" class="pic" class=" img-responsive"></td>
-                                          <td><img src="" class="pic" class=" img-responsive"></td>
+                                        <td style="background-image:url(../../assets/images/bubble1.png);background-size: 100%;background-repeat: no-repeat;margin-top: 20px;margin-left: 5px;text-align: center" width="100" >ass 1</td>
+                                         <td><img src="../../assets/images/bubble1.png" class="pic" class=" img-responsive"></td>
+                                          <td><img src="../../assets/images/bubble1.png" class="pic" class=" img-responsive"></td>
                                     </tr>
                                      <tr>
-                                        <td><img src="" class="pic" class=" img-responsive"></td>
-                                         <td><img src="" class="pic" class=" img-responsive"></td>
-                                          <td><img src="" class="pic" class=" img-responsive"></td>
+                                        <td><img src="../../assets/images/bubble1.png" class="pic" class=" img-responsive"></td>
+                                         <td><img src="../../assets/images/bubble1.png" class="pic" class=" img-responsive"></td>
+                                          <td><img src="../../assets/images/bubble1.png" class="pic" class=" img-responsive"></td>
                                     </tr>
                                 </tbody>
                             </table>
