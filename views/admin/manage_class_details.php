@@ -51,9 +51,7 @@
                     </ul>
 
 
-                    <ul class="nav nav-sidebar">
-                        <li><a href="manage_teachers.php">Manage Teachers</a></li>
-                    </ul>
+                   
                     
                     <ul class="nav nav-sidebar">
                         <li><a href="manage_subjects.php">Manage Subjects</a></li>

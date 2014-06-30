@@ -8,7 +8,7 @@ session_start();
 $databasename = $_SESSION["database_name"];
 $db = $connection->$databasename;
 $standard = 1; //$_POST["standard"];
-$div = "A"; //$_POST["division"];
+$div = "B"; //$_POST["division"];
 //student details
 $first_name = $_POST["update_first_name"];
 $last_name = $_POST["update_last_name"];

@@ -46,13 +46,8 @@
                         <li class="active" ><a id="overview" href="overview.php">Overview</a></li>
                     </ul>
 
-                    <ul class="nav nav-sidebar">
-                        <li><a href="manage_class_details.php">Manage class</a></li>
-                    </ul>
-
-
-                    <ul class="nav nav-sidebar">
-                        <li><a href="manage_exam.php">Manage Exam</a></li>
+                     <ul class="nav nav-sidebar">
+                        <li><a href="manage_students.php">Manage Students</a></li>
                     </ul>
 
                 </div>
