@@ -5,7 +5,7 @@ include '../database.php';
  * Updating student database changed by MODIFY Tab2
  */
 session_start();
-$databasename = "projectx";//$_SESSION["database_name"];
+$databasename = /*"projectx";*/$_SESSION["database_name"];
 $db = $connection->$databasename;
 $standard = 1; //$_POST["standard"];
 $div = "A"; //$_POST["division"];
