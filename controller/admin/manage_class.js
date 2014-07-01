@@ -10,17 +10,54 @@ $(document).ready(function(){
      $.ajax(
             {
                 type: 'GET',
-                url: '../../model/teacher/set_question_paper_options.php',
-                data: {
-                    field: f
-                },
-                success: function(j)
+                url: '../../models/admin/manage_class.php',
+                data:{},
+                success: function()
                 {
-                    var options = '<option>Select standard</option>';
-                    for (var i = 0; i < j.length; i++) {
-                        options += '<option value="' + j[i] + '">' + j[i] + '</option>';
+                    var row_detail = "<div class=\"row\" style=\"padding-bottom:20px\">";
+                            
+                    var col_detail ="<div class=\"col-lg-3\" style=\"padding-right:30px\">"+
+                                    "<a href=\"#\">"+
+                                    "<div class=\"panel panel-info\">"+
+                                    "<div class=\"panel-heading\">"+
+                                        
+                                        "<div class=\"row\">"+
+                                           
+                                            "<div class=\"col-xs-6 text-left\">"+
+                                                
+                                                "<span class=\"glyphicon glyphicon-book\" style=\"font-size: 40px\">"+
+                                                "</span>"+
+                                                    
+                                            "</div>"+
+                                            "<div class=\"col-xs-6 text-left\" style=\"font-family: cursive; font-size: x-large; color: #285e8e\">"+
+                                                "Class  1"+
+                                            "</div>"+
+                                        "</div>"+
+                                        
+                                    "</div>"+
+                                    
+                                        "<div class=\"panel-footer announcement-bottom\">"+
+                                            "<div class=\"row\">"+
+                                                "<div class=\"col-xs-6\">"+
+                                                    "Class Details"+
+                                                "</div>"+
+                                                
+                                            "</div>"+
+                                        "</div>"+
+                                    
+                                "</div>"+
+                                "</a>"+
+                            "</div>";
+                     var row_close = "</div>";   
+                    var display;
+                    for (var i = 0; i < 3; i++) {
+                        display += row_detail;
+                        for (var j = 0; j < 3; j++) {
+                            display += col_detail;
+                        }
+                        display +=row_close;
                     }
-                    $("#sqp_standard").html(options);
+                    $("#display_class").html(display);
                 }
             });
     

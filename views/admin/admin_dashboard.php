@@ -62,42 +62,10 @@
                 </div>
 
                 <!--******************Dashboard content goes here*************-->
-                <div class="col-sm-8 col-sm-offset-1 main" >             
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="panel panel-info">
-                                    <div class="panel-heading">
-                                        
-                                        <div class="row">
-                                           
-                                            <div class="col-xs-6 text-left">
-                                                
-                                                <span class="glyphicon glyphicon-book" style="font-size: 40px">
-                                                </span>
-                                                    
-                                            </div>
-                                            <div class="col-xs-6 text-left" style="font-family: cursive; font-size: x-large; color: #285e8e">
-                                                Class  1
-                                            </div>
-                                            <!--<p style="font-family: cursive; font-size: x-large; color: #285e8e">-->
-                                        </div>
-                                        
-                                    </div>
-                                    <a href="#">
-                                        <div class="panel-footer announcement-bottom">
-                                            <div class="row">
-                                                <div class="col-xs-6">
-                                                    Class Details
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-sm-8 col-sm-offset-2 main" >             
+ 
+                    <div class="container" id="display_class" name="display_class">
+                       <!--placeholder for ajax call -->
 
                     </div>
                 </div>
@@ -127,7 +95,7 @@
     <!-- JavaScript -->
     <script src="../../assets/js/jquery-1.10.2.js"></script>
     <script src="../../assets/js/bootstrap.js"></script>
-    
+    <script src="../../controller/admin/manage_class.js"></script>
 
 </body>
 
