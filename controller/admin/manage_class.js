@@ -11,12 +11,22 @@ $(document).ready(function(){
             {
                 type: 'GET',
                 url: '../../models/admin/manage_class.php',
-                data:{},
-                success: function()
-                {
-                    var row_detail = "<div class=\"row\" style=\"padding-bottom:20px\">";
+                success: function(data)
+                {   
+                    var display ="<br />";
+                    var row_detail;
+                    var row_close;
+                    var col_detail;
+                    var a=0;
+                    var rows = parseInt(data.length/9+"");
+                    for (var i = 0; i < rows; i++) {
+                        
+                        row_detail = "<div class=\"row\" style=\"padding-bottom:20px\">";
+                        display += row_detail;
+                        
+                        for (var j = 0; j < 3; j++) {
                             
-                    var col_detail ="<div class=\"col-lg-3\" style=\"padding-right:30px\">"+
+                            col_detail ="<div class=\"col-lg-3\" style=\"padding-right:30px\">"+
                                     "<a href=\"#\">"+
                                     "<div class=\"panel panel-info\">"+
                                     "<div class=\"panel-heading\">"+
@@ -30,17 +40,18 @@ $(document).ready(function(){
                                                     
                                             "</div>"+
                                             "<div class=\"col-xs-6 text-left\" style=\"font-family: cursive; font-size: x-large; color: #285e8e\">"+
-                                                "Class  1"+
+                                                "Class  "+ data[a++]+
                                             "</div>"+
                                         "</div>"+
                                         
                                     "</div>"+
                                     
                                         "<div class=\"panel-footer announcement-bottom\">"+
-                                            "<div class=\"row\">"+
-                                                "<div class=\"col-xs-6\">"+
-                                                    "Class Details"+
-                                                "</div>"+
+                                            "<div class=\"row\" style=\"padding-left:15px\">"+
+                                                //"<div class=\"col-lg-1\">"+
+                                                    "<p>No. Of Students :"+data[a++]+"</p>"+
+                                                    "<p>No. Of Teachers :"+data[a++]+
+                                                //"</div>"+
                                                 
                                             "</div>"+
                                         "</div>"+
@@ -48,20 +59,60 @@ $(document).ready(function(){
                                 "</div>"+
                                 "</a>"+
                             "</div>";
-                     var row_close = "</div>";   
-                    var display;
-                    for (var i = 0; i < 3; i++) {
-                        display += row_detail;
-                        for (var j = 0; j < 3; j++) {
                             display += col_detail;
                         }
+                        row_close = "</div>";
+                        display +=row_close;
+                    }
+                    
+                    if(data.length>a){
+                        row_detail = "<div class=\"row\" style=\"padding-bottom:20px\">";
+                        display += row_detail;
+                        while(a<data.length){
+                            col_detail ="<div class=\"col-lg-3\" style=\"padding-right:30px\">"+
+                                    "<a href=\"#\">"+
+                                    "<div class=\"panel panel-info\">"+
+                                    "<div class=\"panel-heading\">"+
+                                        
+                                        "<div class=\"row\">"+
+                                           
+                                            "<div class=\"col-xs-6 text-left\">"+
+                                                
+                                                "<span class=\"glyphicon glyphicon-book\" style=\"font-size: 40px\">"+
+                                                "</span>"+
+                                                    
+                                            "</div>"+
+                                            "<div class=\"col-xs-6 text-left\" style=\"font-family: cursive; font-size: x-large; color: #285e8e\">"+
+                                                "Class  "+ data[a++]+
+                                            "</div>"+
+                                        "</div>"+
+                                        
+                                    "</div>"+
+                                    
+                                        "<div class=\"panel-footer announcement-bottom\">"+
+                                            "<div class=\"row\" style=\"padding-left:15px\">"+
+                                                //"<div class=\"col-lg-1\">"+
+                                                    "<p>No. Of Students :"+data[a++]+"</p>"+
+                                                    "<p>No. Of Teachers :"+data[a++]+
+                                                //"</div>"+
+                                                
+                                            "</div>"+
+                                        "</div>"+
+                                    
+                                "</div>"+
+                                "</a>"+
+                            "</div>";
+                            display += col_detail;
+                        }
+                        row_close = "</div>";
                         display +=row_close;
                     }
                     $("#display_class").html(display);
                 }
+                
             });
     
-    
+    return false;
     
     
     // hello world

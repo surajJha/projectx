@@ -58,14 +58,9 @@
                 <div class="col-sm-9 col-sm-offset-2 main" >             
 
                     <div class="container">
-                        <div class="row">
-
-
-
-
-
-
-
+                        <div class="row" id="display_class" name="display_class">
+                           
+                            <!--placeholder for ajax call-->
                         </div>
                     </div>
                 </div>
