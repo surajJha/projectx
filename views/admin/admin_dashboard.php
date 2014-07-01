@@ -14,7 +14,6 @@
 
         <!-- Add custom CSS here -->
         <link href="../../assets/css/sidebar.css" rel="stylesheet">
-        <!-- Custon panel color settings-->
 
     </head>
     <body>
@@ -23,6 +22,7 @@
             <div class =" container">
                 <a href="admin_dashboard.php" class =" navbar-brand">HexaGraph</a>
 
+               
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="overview.php">Home</a></li>
@@ -31,6 +31,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="edit_profile.php">Edit profile</a></li>
                                 <li><a href="../../model/logout.php">Logout</a></li>
+
 
                             </ul>
                         </li>
@@ -51,7 +52,9 @@
                         <li><a href="manage_class.php">Manage class</a></li>
                     </ul>
 
-
+                    <ul class="nav nav-sidebar">
+                        <li><a href="manage_teachers.php">Manage Teachers</a></li>
+                    </ul>
                     <ul class="nav nav-sidebar">
                         <li><a href="manage_exam.php">Manage Exam</a></li>
                     </ul>
@@ -108,11 +111,17 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p>Copyright &copy; Company 2013</p>
-                </div>
-            </div>
+
+                        </div>
+                    </div>
+                
         </footer>
 
-    </div>
+            
+        
+
+
+
     <!-- /.container -->
 
     <!-- JavaScript -->

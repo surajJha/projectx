@@ -53,9 +53,7 @@
                     </ul>
 
 
-                    <ul class="nav nav-sidebar">
-                        <li><a href="manage_teachers.php">Manage Teachers</a></li>
-                    </ul>
+                   
 
                     <ul class="nav nav-sidebar">
                         <li><a href="manage_subjects.php">Manage Subjects</a></li>
@@ -88,7 +86,7 @@
                                                 <div class="tab-pane active" id="tab1">
                                                     <div> 
                                                         <div class="row">
-                                                            <!== ====================Student's information===============-->
+                                                            <!--== ====================Student's information===============-->
                                                             <div class="col-md-6 col-md-offset-3">
                                                                 <form id="add_new_student" method="post" accept-charset="utf-8" class="form" role="form">  
                                                                     <h4>Student's Information</h4><hr>

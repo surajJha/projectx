@@ -1,3 +1,4 @@
+
 <?php
 include '../database.php';
 
@@ -71,3 +72,4 @@ $update_parent = $db->person->update(
 
 //echo json_encode($_POST);
 echo "success";
+
