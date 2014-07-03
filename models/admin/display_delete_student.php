@@ -7,11 +7,14 @@ header('Content-Type: application/json');
 session_start();
 $databasename = "projectx";//$_SESSION["database_name"];
 $db = $connection->$databasename;
-$standard = 1; //$_POST["standard"];
-$div = "A"; //$_POST["division"];
+
+
+$std = /*1;*/$_SESSION['standard'];
+
+$div = /*"A";*/$_SESSION['division'];
 
 $display = $db->person->find(
-        array("standard"=>$standard,"division"=>$div),
+        array("standard"=>$std,"division"=>$div),
         array("_id"=>0,"roll_no"=>1,"name"=>1)
         );
 $x=array();

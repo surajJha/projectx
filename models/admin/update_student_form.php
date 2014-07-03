@@ -9,8 +9,9 @@ header('Content-Type: application/json');
 session_start();
 $databasename = $_SESSION["database_name"];
 $db = $connection->$databasename;
-$standard = 1; //$_POST["standard"];
-$div = "A"; //$_POST["division"];
+$std = /*1;*/$_SESSION['standard'];
+
+$div = /*"A";*/$_SESSION['division'];
 
 $select_stu = $_GET["select_student"];
 $student = $_GET["student_info"];
@@ -19,7 +20,7 @@ if ($select_stu == "Name") {
     $fname = $name[0];
     $lname = $name[1];
     $stu = $db->person->findOne(
-            array("standard" => $standard, "division" => $div, "name.first_name" => $fname, "name.last_name" => $lname), array("_id" => 1, "name" => 1, "roll_no" => 1, "address" => 1, "dob" => 1, "roll_no" => 1, "contact_no" => 1, "email_id" => 1, "parent_id" => 1)
+            array("standard" => $std, "division" => $div, "name.first_name" => $fname, "name.last_name" => $lname), array("_id" => 1, "name" => 1, "roll_no" => 1, "address" => 1, "dob" => 1, "roll_no" => 1, "contact_no" => 1, "email_id" => 1, "parent_id" => 1)
     );
     $_SESSION["update_student_id"]=$stu["_id"];
     $_SESSION["update_student_parent_id"]=$stu["parent_id"];
@@ -43,7 +44,7 @@ if ($select_stu == "Name") {
 } elseif ($select_stu == "Roll Number") {
     $rollno = intval($student);
     $stu = $db->person->findOne(
-            array("standard" => $standard, "division" => $div, "roll_no" => $rollno), array("_id" => 0, "name" => 1, "roll_no" => 1, "address" => 1, "dob" => 1, "roll_no" => 1, "contact_no" => 1, "email_id" => 1, "parent_id" => 1)
+            array("standard" => $std, "division" => $div, "roll_no" => $rollno), array("_id" => 0, "name" => 1, "roll_no" => 1, "address" => 1, "dob" => 1, "roll_no" => 1, "contact_no" => 1, "email_id" => 1, "parent_id" => 1)
     );
     
     $parent = $db->person->findOne(array("_id" => $stu["parent_id"]));

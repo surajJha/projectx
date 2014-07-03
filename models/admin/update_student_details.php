@@ -1,4 +1,3 @@
-
 <?php
 include '../database.php';
 
@@ -8,8 +7,8 @@ include '../database.php';
 session_start();
 $databasename = /*"projectx";*/$_SESSION["database_name"];
 $db = $connection->$databasename;
-$standard = 1; //$_POST["standard"];
-$div = "A"; //$_POST["division"];
+$standard = /*1; */$_SESSION["standard"];
+$div = /*"A"; */$_SESSION["division"];
 //student details
 $first_name = /*"Apurv";*/$_POST["update_first_name"];
 $last_name = /*"hvgfg";*/$_POST["update_last_name"];

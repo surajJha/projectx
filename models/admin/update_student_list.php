@@ -8,14 +8,15 @@ header('Content-Type: application/json');
 session_start();
 $databasename = $_SESSION["database_name"];
 $db = $connection->$databasename;
-$standard = 1; //$_POST["standard"];
-$div = "A"; //$_POST["division"];
+$std = /*1;*/$_SESSION["standard"];
+
+$div = /*"A";*/$_SESSION["division"];
 $update_select = $_GET["select_student"];
 
 if ($update_select == "Name") {
 
     $name = $db->person->find(
-            /* array('$match'=> */array("standard" => $standard, "division" => $div), //),
+            /* array('$match'=> */array("standard" => $std, "division" => $div), //),
             /* array('$project'=> */ array("_id" => 0, "name" => 1)//)
     );
 
@@ -28,7 +29,7 @@ if ($update_select == "Name") {
 } elseif ($update_select == "Roll Number") {
 
     $name = $db->person->find(
-            /* array('$match'=> */array("standard" => $standard, "division" => $div), //),
+            /* array('$match'=> */array("standard" => $std, "division" => $div), //),
             /* array('$project'=> */ array("_id" => 0, "roll_no" => 1)//)
     );
 

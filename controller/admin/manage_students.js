@@ -77,6 +77,7 @@ $(document).ready(function() {
                                                 if (j == "success") {
 
                                                     $("#update_successful").html("Student's Information was successfully updated .");
+                                                    location.reload();
 
                                                 }
                                                 else {
@@ -168,7 +169,7 @@ $(document).ready(function() {
             success: function(data) {
 
                 //$("#delete_student").empty();
-
+                //data.roll_no.sort();
                 var t = "<div><form id=\"select_student\" name=\"select_student\" method=\"post\"><div class=\"table-responsive\"><table class=\"table table-striped\"><caption><h3>Select Multiple students for Deletion</h3></caption>"
                 t += "<thead><tr> <th><h4>Roll Number</h4></th> <th><h4>Name</h4></th><th><center><button id=\"delete_student_button\" class=\"btn btn-danger\" type=\"submit\">Delete</button ></center></th></tr></thead>";
 

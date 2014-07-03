@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php 
+    session_start();
+    $_SESSION["standard"]=  intval($_GET["standard"]);
+    $_SESSION["division"]=$_GET["division"];
+?>
 <html lang="en">
 
     <head>

@@ -7,8 +7,9 @@ include '../database.php';
 session_start();
 $databasename = $_SESSION["database_name"];
 $db = $connection->$databasename;
-$standard = 1; //$_POST["standard"];
-$div = "A"; //$_POST["division"];
+$std = /*1;*/$_SESSION["standard"];
+
+$div = /*"A";*/$_SESSION["division"];
 
 $roll = array();
 for($i=0;$i<sizeof($_POST["delete_student_checkbox"]);$i++){
@@ -16,7 +17,7 @@ for($i=0;$i<sizeof($_POST["delete_student_checkbox"]);$i++){
 }
 
 $find_stu_to_delete = $db->person->find(
-        array("standard"=>$standard,"division"=>$div,"roll_no"=>array('$in'=>$roll))
+        array("standard"=>$std,"division"=>$div,"roll_no"=>array('$in'=>$roll))
         );
 
 $parent_id = array();

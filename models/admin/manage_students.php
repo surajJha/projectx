@@ -50,8 +50,10 @@ $parent = array(
 
 	$person->insert($parent);
 
-$std = 1;//$_POST["standard"];
-$div = "A";//$_POST["division"];
+$std = /*1;*/$_SESSION['standard'];
+
+$div = /*"A";*/$_SESSION['division'];
+
 $rno = $db->person->aggregate(
         array('$match'=>array("standard"=>$std,"division"=>$div)),
         //array('$sort'=>array("roll_no"=>1)),
